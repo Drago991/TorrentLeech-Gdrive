@@ -81,7 +81,7 @@ async def status_message_f(client, message):
     LOGGER.info(msg)
 
     if msg == "":
-        msg = "🤷‍♂️ No Active, Queued or Paused TORRENTs"
+        msg = "🤷🏼‍♀ No Active, Queued or Paused torrents"
 
     currentTime = TimeFormatter((time.time() - BOT_START_TIME))
     total, used, free = shutil.disk_usage(".")
@@ -109,7 +109,7 @@ async def cancel_message_f(client, message):
             LOGGER.info(downloads)
             LOGGER.info(downloads.remove(force=True))
             await i_m_s_e_g.edit_text(
-                "Leech Cancelled"
+                "Leech Cancelled🙄"
             )
         except Exception as e:
             await i_m_s_e_g.edit_text(
@@ -241,5 +241,5 @@ async def aexec(code, client, message):
 '''
 async def upload_log_file(client, message):
     await message.reply_document(
-        "Torrentleech-Gdrive.log"
+        "@SriLeecherbot.log"
     )
